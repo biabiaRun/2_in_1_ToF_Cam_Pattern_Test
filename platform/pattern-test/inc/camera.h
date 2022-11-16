@@ -9,7 +9,7 @@
 #include <royale/ICameraDevice.hpp>
 #include <CameraFactory.hpp>
 
-
+/*
 class MyRawListener : public royale::IExtendedDataListener
 {
 public:
@@ -38,6 +38,7 @@ public:
     int m_count;
     std::vector<float> m_cur_temp;
 };
+*/
 
 class Camera
 {
@@ -50,11 +51,11 @@ public:
     }
 
     std::unique_ptr<royale::ICameraDevice> camera_; // The camera device
-    MyRawListener rawListener_;
+    //MyRawListener rawListener_;
     int access_level_;
-    std::string id_;                                // Unique ID for the camera device
-    royale::String use_case_;                       // Camera use_case_
-    royale::StreamId stream_id_;                    // FIRST stream ID for the given use_case_
+    //std::string id_;                                // Unique ID for the camera device
+    //royale::String use_case_;                       // Camera use_case_
+    //royale::StreamId stream_id_;                    // FIRST stream ID for the given use_case_
     uint16_t fps_;
 
     enum CameraError
@@ -72,11 +73,11 @@ public:
         RECEIVE_DATA_ERROR,
     };
 
-    inline const std::string GetID() const { return id_; }
+    //inline const std::string GetID() const { return id_; }
 
     CameraError RunAccessLevelTests(int user_level);
     CameraError RunConfigTests(int testPattern);
-    CameraError RunPatternTest();
+
         
 };
 

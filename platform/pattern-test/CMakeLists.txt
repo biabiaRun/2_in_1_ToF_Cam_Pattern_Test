@@ -12,28 +12,24 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/inc
     ${CMAKE_CURRENT_SOURCE_DIR}/../inc
     ${CMAKE_CURRENT_SOURCE_DIR}/../../royale/source/core/inc
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../royale/source/royale/inc
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../royale/source/core/inc/royale
     )
 
 set(HEADERS
-  )
-
-add_compile_options(-std=c++11)
-
+    )
+    
 set(SOURCES
-  "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/camera.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/pattern-test.cpp"
     )
 
 link_directories(
     )
 
-add_executable(pattern-testing
+add_executable(pattern-test
     ${HEADERS}
     ${SOURCES}
     )
-  
-install(TARGETS pattern-testing DESTINATION ${ROYALE_INSTALL_BIN_DIR})
 
-target_link_libraries(pattern-testing platform)
+install(TARGETS pattern-test DESTINATION ${ROYALE_INSTALL_BIN_DIR})
 
+target_link_libraries(pattern-test platform)
